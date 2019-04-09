@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dgvResults = new System.Windows.Forms.DataGridView();
             this.grpDestination = new System.Windows.Forms.GroupBox();
+            this.btnStop = new System.Windows.Forms.Button();
             this.btnTransmit = new System.Windows.Forms.Button();
             this.txtDestination = new System.Windows.Forms.TextBox();
             this.grpResults = new System.Windows.Forms.GroupBox();
-            this.btnStop = new System.Windows.Forms.Button();
             this.prbIsPinging = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.grpDestination.SuspendLayout();
@@ -73,6 +73,20 @@
             this.grpDestination.TabStop = false;
             this.grpDestination.Text = "Endereço IP de destino";
             // 
+            // btnStop
+            // 
+            this.btnStop.Enabled = false;
+            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
+            this.btnStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStop.Location = new System.Drawing.Point(222, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(58, 23);
+            this.btnStop.TabIndex = 3;
+            this.btnStop.Text = "&Parar";
+            this.btnStop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
+            // 
             // btnTransmit
             // 
             this.btnTransmit.Image = ((System.Drawing.Image)(resources.GetObject("btnTransmit.Image")));
@@ -104,20 +118,6 @@
             this.grpResults.TabStop = false;
             this.grpResults.Text = "Resultados";
             // 
-            // btnStop
-            // 
-            this.btnStop.Enabled = false;
-            this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStop.Location = new System.Drawing.Point(222, 19);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(58, 23);
-            this.btnStop.TabIndex = 3;
-            this.btnStop.Text = "&Parar";
-            this.btnStop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
-            // 
             // prbIsPinging
             // 
             this.prbIsPinging.Location = new System.Drawing.Point(7, 312);
@@ -137,6 +137,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pinger";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.grpDestination.ResumeLayout(false);
             this.grpDestination.PerformLayout();
@@ -146,14 +147,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.GroupBox grpDestination;
         private System.Windows.Forms.GroupBox grpResults;
         private System.Windows.Forms.Button btnTransmit;
         private System.Windows.Forms.TextBox txtDestination;
-        private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.ProgressBar prbIsPinging;
+        public System.Windows.Forms.Button btnStop;
+        public System.Windows.Forms.ProgressBar prbIsPinging;
+        public System.Windows.Forms.DataGridView dgvResults;
     }
 }
 

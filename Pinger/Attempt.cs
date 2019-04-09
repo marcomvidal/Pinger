@@ -13,12 +13,12 @@ namespace Pinger
 
         public Attempt()
         {
-            ResetTarget();
+            SetDefaultDestination();
         }
 
-        public void ResetTarget()
+        public void SetDefaultDestination()
         {
-            Destination = IPAddress.Parse("8.8.8.8");
+            this.Destination = IPAddress.Parse("8.8.8.8");
         }
 
         public async Task<bool> Send(string destination)
