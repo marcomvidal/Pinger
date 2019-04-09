@@ -80,5 +80,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPSites_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\StatusCriticalError_16x.png" />
+    <Content Include="Resources\StatusOK_16x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

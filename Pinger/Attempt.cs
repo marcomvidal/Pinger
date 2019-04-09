@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 
 namespace Pinger
 {
@@ -20,13 +21,13 @@ namespace Pinger
             Destination = IPAddress.Parse("8.8.8.8");
         }
 
-        public bool Send(string destination)
+        public async Task<bool> Send(string destination)
         {
             var validatedAddress = ValidateAddress(destination);
             if (validatedAddress != null) { Destination = validatedAddress; }
 
             var ping = new Ping();
-            var result = ping.Send(Destination);
+            var result = await ping.SendPingAsync(Destination);
 
             this.Status = result.Status;
             this.Time = DateTime.Now;
