@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Pinger.Models;
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace Pinger
+namespace Pinger.Views
 {
     public partial class MainForm : Form
     {
@@ -13,14 +14,19 @@ namespace Pinger
         public MainForm()
         {
             InitializeComponent();
-            this._attempts = new BindingList<Attempt>();
-            this._presenter = new MainPresenter(this);
+            _attempts = new BindingList<Attempt>();
+            _presenter = new MainPresenter(this);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dgvResults.DataSource = this._attempts;
+            dgvResults.DataSource = _attempts;
             _presenter.DataGridSetup();
+        }
+
+        private void TxtDestination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) { BtnTransmit_Click(sender, e); }
         }
 
         private async void BtnTransmit_Click(object sender, EventArgs e)
@@ -35,10 +41,12 @@ namespace Pinger
                     var attempt = new Attempt();
 
                     isSucceed = await attempt.Send(txtDestination.Text);
+                    _attempts.Add(attempt);
+                    _presenter.ColorizeResultCell(attempt);
                     _presenter.ShowSuccessMessage(isSucceed, attempt);
-                    this._attempts.Add(attempt);
+                    _presenter.AutoScrollDataGridView();
                 }
-                while (!isSucceed && this.ShouldContinue);
+                while (!isSucceed && ShouldContinue);
             }
             catch (Exception)
             {

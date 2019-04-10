@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 
-namespace Pinger
+namespace Pinger.Models
 {
-    class Attempt
+    public class Attempt
     {
         public IPAddress Destination { get; set; }
         public IPStatus Status { get; set; }
@@ -18,7 +18,7 @@ namespace Pinger
 
         public void SetDefaultDestination()
         {
-            this.Destination = IPAddress.Parse("8.8.8.8");
+            Destination = IPAddress.Parse("8.8.8.8");
         }
 
         public async Task<bool> Send(string destination)
@@ -29,10 +29,10 @@ namespace Pinger
             var ping = new Ping();
             var result = await ping.SendPingAsync(Destination);
 
-            this.Status = result.Status;
-            this.Time = DateTime.Now;
+            Status = result.Status;
+            Time = DateTime.Now;
 
-            if (this.Status == IPStatus.Success) { return true; }
+            if (Status == IPStatus.Success) { return true; }
             return false;
         }
 

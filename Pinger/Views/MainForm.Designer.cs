@@ -1,4 +1,4 @@
-﻿namespace Pinger
+﻿namespace Pinger.Views
 {
     partial class MainForm
     {
@@ -58,7 +58,7 @@
             this.dgvResults.ShowCellToolTips = false;
             this.dgvResults.ShowEditingIcon = false;
             this.dgvResults.ShowRowErrors = false;
-            this.dgvResults.Size = new System.Drawing.Size(358, 287);
+            this.dgvResults.Size = new System.Drawing.Size(388, 287);
             this.dgvResults.TabIndex = 1;
             // 
             // grpDestination
@@ -68,7 +68,7 @@
             this.grpDestination.Controls.Add(this.txtDestination);
             this.grpDestination.Location = new System.Drawing.Point(10, 12);
             this.grpDestination.Name = "grpDestination";
-            this.grpDestination.Size = new System.Drawing.Size(370, 52);
+            this.grpDestination.Size = new System.Drawing.Size(400, 52);
             this.grpDestination.TabIndex = 1;
             this.grpDestination.TabStop = false;
             this.grpDestination.Text = "Endereço IP de destino";
@@ -78,7 +78,7 @@
             this.btnStop.Enabled = false;
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
             this.btnStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStop.Location = new System.Drawing.Point(222, 19);
+            this.btnStop.Location = new System.Drawing.Point(252, 19);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(58, 23);
             this.btnStop.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.btnTransmit.Image = ((System.Drawing.Image)(resources.GetObject("btnTransmit.Image")));
             this.btnTransmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransmit.Location = new System.Drawing.Point(286, 19);
+            this.btnTransmit.Location = new System.Drawing.Point(316, 19);
             this.btnTransmit.Name = "btnTransmit";
             this.btnTransmit.Size = new System.Drawing.Size(78, 23);
             this.btnTransmit.TabIndex = 2;
@@ -104,8 +104,9 @@
             // 
             this.txtDestination.Location = new System.Drawing.Point(7, 21);
             this.txtDestination.Name = "txtDestination";
-            this.txtDestination.Size = new System.Drawing.Size(209, 20);
+            this.txtDestination.Size = new System.Drawing.Size(239, 20);
             this.txtDestination.TabIndex = 1;
+            this.txtDestination.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtDestination_KeyDown);
             // 
             // grpResults
             // 
@@ -113,7 +114,7 @@
             this.grpResults.Controls.Add(this.dgvResults);
             this.grpResults.Location = new System.Drawing.Point(10, 70);
             this.grpResults.Name = "grpResults";
-            this.grpResults.Size = new System.Drawing.Size(370, 341);
+            this.grpResults.Size = new System.Drawing.Size(400, 341);
             this.grpResults.TabIndex = 2;
             this.grpResults.TabStop = false;
             this.grpResults.Text = "Resultados";
@@ -123,7 +124,7 @@
             this.prbIsPinging.Location = new System.Drawing.Point(7, 312);
             this.prbIsPinging.MarqueeAnimationSpeed = 50;
             this.prbIsPinging.Name = "prbIsPinging";
-            this.prbIsPinging.Size = new System.Drawing.Size(357, 23);
+            this.prbIsPinging.Size = new System.Drawing.Size(387, 23);
             this.prbIsPinging.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prbIsPinging.TabIndex = 2;
             // 
@@ -131,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 423);
+            this.ClientSize = new System.Drawing.Size(422, 423);
             this.Controls.Add(this.grpResults);
             this.Controls.Add(this.grpDestination);
             this.Name = "MainForm";
@@ -149,11 +150,11 @@
         #endregion
         private System.Windows.Forms.GroupBox grpDestination;
         private System.Windows.Forms.GroupBox grpResults;
-        private System.Windows.Forms.Button btnTransmit;
         private System.Windows.Forms.TextBox txtDestination;
         public System.Windows.Forms.Button btnStop;
         public System.Windows.Forms.ProgressBar prbIsPinging;
         public System.Windows.Forms.DataGridView dgvResults;
+        public System.Windows.Forms.Button btnTransmit;
     }
 }
 
