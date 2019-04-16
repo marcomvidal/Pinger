@@ -1,6 +1,6 @@
 # Pinger
 
-Aplicação Windows Forms para desktop. Testa persistentemente a conectividade com a Internet e avisa com uma caixa de mensagem quando funciona. <br />
+Aplicação Windows Forms. Testa persistentemente a conectividade com a Internet e avisa com uma caixa de mensagem quando funciona. <br />
 
 ## Ferramentas utilizadas
 - C# 7.0
