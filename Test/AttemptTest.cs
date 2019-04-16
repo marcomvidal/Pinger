@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pinger.Models;
-using System;
 using System.Net;
 
 namespace Test
