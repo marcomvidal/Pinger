@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinger", "Pinger\Pinger.csproj", "{05B5841B-7FDD-41A0-85DC-9917593E4367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{3DC7F827-CCB5-416B-8164-6F85E209371A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3DC7F827-CCB5-416B-8164-6F85E209371A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
