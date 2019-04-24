@@ -1,6 +1,8 @@
 ﻿using Pinger.Models;
 using System.Drawing;
+using System.Media;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pinger.Views
@@ -24,12 +26,8 @@ namespace Pinger.Views
         {
             if (!isSucceed) { return; }
             ToggleContinuePinging();
-
-            MessageBox.Show(
-                $"Transmissão ao host {attempt.Destination} foi bem sucedida.",
-                "Sucesso!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            SystemSounds.Exclamation.Play();
+            Task.Run(() => ShowTrayNotification(attempt));
         }
 
         public void ShowFailureMessage()
@@ -41,6 +39,24 @@ namespace Pinger.Views
                 "Erro ao transmitir",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+        }
+
+        public async Task ShowTrayNotification(Attempt attempt)
+        {
+            const int timeShown = 5000;
+
+            var notification = new NotifyIcon()
+            {
+                Visible = true,
+                Icon = SystemIcons.Information,
+                BalloonTipIcon = ToolTipIcon.Info,
+                BalloonTipTitle = "Sucesso!",
+                BalloonTipText = $"Transmissão ao host {attempt.Destination} foi bem sucedida.",
+            };
+
+            notification.ShowBalloonTip(timeShown);
+            await Task.Delay(timeShown);
+            notification.Dispose();
         }
 
         public void ColorizeResultCell(Attempt attempt)

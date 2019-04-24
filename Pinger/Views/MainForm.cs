@@ -43,8 +43,8 @@ namespace Pinger.Views
                     isSucceed = await attempt.Send(txtDestination.Text);
                     _attempts.Add(attempt);
                     _presenter.ColorizeResultCell(attempt);
-                    _presenter.ShowSuccessMessage(isSucceed, attempt);
                     _presenter.AutoScrollDataGridView();
+                    _presenter.ShowSuccessMessage(isSucceed, attempt);
                 }
                 while (!isSucceed && ShouldContinue);
             }

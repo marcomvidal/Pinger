@@ -135,6 +135,7 @@
             this.ClientSize = new System.Drawing.Size(422, 423);
             this.Controls.Add(this.grpResults);
             this.Controls.Add(this.grpDestination);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pinger";
