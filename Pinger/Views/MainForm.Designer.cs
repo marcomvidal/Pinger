@@ -39,9 +39,9 @@
             this.txtDestination = new System.Windows.Forms.TextBox();
             this.grpResults = new System.Windows.Forms.GroupBox();
             this.tlpResults = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpMaster = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.prbIsPinging = new System.Windows.Forms.ProgressBar();
+            this.tlpMaster = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.grpDestination.SuspendLayout();
             this.tlpAllInputs.SuspendLayout();
@@ -49,8 +49,8 @@
             this.tlpDestinationIP.SuspendLayout();
             this.grpResults.SuspendLayout();
             this.tlpResults.SuspendLayout();
-            this.tlpMaster.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tlpMaster.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvResults
@@ -72,7 +72,7 @@
             this.dgvResults.ShowEditingIcon = false;
             this.dgvResults.ShowRowErrors = false;
             this.dgvResults.Size = new System.Drawing.Size(666, 281);
-            this.dgvResults.TabIndex = 1;
+            this.dgvResults.TabIndex = 0;
             // 
             // grpDestination
             // 
@@ -81,7 +81,7 @@
             this.grpDestination.Location = new System.Drawing.Point(3, 3);
             this.grpDestination.Name = "grpDestination";
             this.grpDestination.Size = new System.Drawing.Size(678, 54);
-            this.grpDestination.TabIndex = 1;
+            this.grpDestination.TabIndex = 0;
             this.grpDestination.TabStop = false;
             this.grpDestination.Text = "Endereço IP de destino";
             // 
@@ -98,7 +98,7 @@
             this.tlpAllInputs.RowCount = 1;
             this.tlpAllInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAllInputs.Size = new System.Drawing.Size(672, 35);
-            this.tlpAllInputs.TabIndex = 4;
+            this.tlpAllInputs.TabIndex = 0;
             // 
             // flpActionButtons
             // 
@@ -108,7 +108,7 @@
             this.flpActionButtons.Location = new System.Drawing.Point(521, 3);
             this.flpActionButtons.Name = "flpActionButtons";
             this.flpActionButtons.Size = new System.Drawing.Size(148, 29);
-            this.flpActionButtons.TabIndex = 0;
+            this.flpActionButtons.TabIndex = 1;
             // 
             // btnStop
             // 
@@ -119,7 +119,7 @@
             this.btnStop.Location = new System.Drawing.Point(3, 3);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(58, 23);
-            this.btnStop.TabIndex = 3;
+            this.btnStop.TabIndex = 0;
             this.btnStop.Text = "&Parar";
             this.btnStop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStop.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.btnTransmit.Location = new System.Drawing.Point(67, 3);
             this.btnTransmit.Name = "btnTransmit";
             this.btnTransmit.Size = new System.Drawing.Size(78, 23);
-            this.btnTransmit.TabIndex = 2;
+            this.btnTransmit.TabIndex = 1;
             this.btnTransmit.Text = "&Transmitir";
             this.btnTransmit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTransmit.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.tlpDestinationIP.RowCount = 1;
             this.tlpDestinationIP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDestinationIP.Size = new System.Drawing.Size(512, 29);
-            this.tlpDestinationIP.TabIndex = 1;
+            this.tlpDestinationIP.TabIndex = 0;
             // 
             // txtDestination
             // 
@@ -158,7 +158,7 @@
             this.txtDestination.Location = new System.Drawing.Point(3, 4);
             this.txtDestination.Name = "txtDestination";
             this.txtDestination.Size = new System.Drawing.Size(506, 20);
-            this.txtDestination.TabIndex = 1;
+            this.txtDestination.TabIndex = 0;
             this.txtDestination.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtDestination_KeyDown);
             // 
             // grpResults
@@ -168,7 +168,7 @@
             this.grpResults.Location = new System.Drawing.Point(3, 63);
             this.grpResults.Name = "grpResults";
             this.grpResults.Size = new System.Drawing.Size(678, 346);
-            this.grpResults.TabIndex = 2;
+            this.grpResults.TabIndex = 1;
             this.grpResults.TabStop = false;
             this.grpResults.Text = "Resultados";
             // 
@@ -185,7 +185,30 @@
             this.tlpResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpResults.Size = new System.Drawing.Size(672, 327);
-            this.tlpResults.TabIndex = 3;
+            this.tlpResults.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.prbIsPinging, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 290);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(666, 34);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // prbIsPinging
+            // 
+            this.prbIsPinging.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prbIsPinging.Location = new System.Drawing.Point(3, 3);
+            this.prbIsPinging.MarqueeAnimationSpeed = 50;
+            this.prbIsPinging.Name = "prbIsPinging";
+            this.prbIsPinging.Size = new System.Drawing.Size(660, 24);
+            this.prbIsPinging.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prbIsPinging.TabIndex = 0;
             // 
             // tlpMaster
             // 
@@ -200,30 +223,7 @@
             this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMaster.Size = new System.Drawing.Size(684, 412);
-            this.tlpMaster.TabIndex = 3;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.prbIsPinging, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 290);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(666, 34);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // prbIsPinging
-            // 
-            this.prbIsPinging.Dock = System.Windows.Forms.DockStyle.Top;
-            this.prbIsPinging.Location = new System.Drawing.Point(3, 3);
-            this.prbIsPinging.MarqueeAnimationSpeed = 50;
-            this.prbIsPinging.Name = "prbIsPinging";
-            this.prbIsPinging.Size = new System.Drawing.Size(660, 24);
-            this.prbIsPinging.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prbIsPinging.TabIndex = 3;
+            this.tlpMaster.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -245,8 +245,8 @@
             this.tlpDestinationIP.PerformLayout();
             this.grpResults.ResumeLayout(false);
             this.tlpResults.ResumeLayout(false);
-            this.tlpMaster.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tlpMaster.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
