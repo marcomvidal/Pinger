@@ -8,7 +8,7 @@ namespace Test
     public class AttemptTest
     {
         [TestMethod]
-        public void SetDefaultDestination_RevertsToDefault()
+        public void RevertToDefaultDestination_ShouldSuccess()
         {
             // Arrange
             var expected = IPAddress.Parse("8.8.8.8");
@@ -30,7 +30,7 @@ namespace Test
         [DataRow("192.168.0.255")]
         [DataRow("127.0.0.1")]
         [DataRow("0")]
-        public void ValidateAddress_ItsAParseableAddress(string address)
+        public void ValidateAValidAddress_ShouldSuccess(string address)
         {
             // Arrange
             var expected = IPAddress.Parse(address);
@@ -52,7 +52,7 @@ namespace Test
         [DataRow("AB12CD34")]
         [DataRow("")]
         [DataRow(" ")]
-        public void ValidateAddress_IsAnInvalidAddress(string address)
+        public void ValidateAnInValidAddress_ShouldFail(string address)
         {
             // Arrange
             var attempt = new Attempt();

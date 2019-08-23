@@ -11,7 +11,7 @@ namespace Test
         [DataRow("8.8.8.8")]
         [DataRow("54.94.175.250")]
         [DataRow("127.0.0.1")]
-        public async Task Send_ActiveAddress(string address)
+        public async Task SendToActiveAddress_ShouldSuccess(string address)
         {
             // Arrange
             var attempt = new Attempt();
@@ -26,7 +26,7 @@ namespace Test
         [TestMethod]
         [DataRow("8.8.8.0")]
         [DataRow("192.168.0.0")]
-        public async Task Send_InactiveAddress(string address)
+        public async Task SendToInactiveAddress_ShouldFail(string address)
         {
             // Arrange
             var attempt = new Attempt();
