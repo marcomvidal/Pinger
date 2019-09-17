@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.dgvResults = new System.Windows.Forms.DataGridView();
             this.grpDestination = new System.Windows.Forms.GroupBox();
             this.tlpAllInputs = new System.Windows.Forms.TableLayoutPanel();
             this.flpActionButtons = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,7 +41,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.prbIsPinging = new System.Windows.Forms.ProgressBar();
             this.tlpMaster = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
+            this.tlpDataGrid = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
             this.grpDestination.SuspendLayout();
             this.tlpAllInputs.SuspendLayout();
             this.flpActionButtons.SuspendLayout();
@@ -51,28 +51,9 @@
             this.tlpResults.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpMaster.SuspendLayout();
+            this.tlpDataGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvResults
-            // 
-            this.dgvResults.AllowUserToAddRows = false;
-            this.dgvResults.AllowUserToDeleteRows = false;
-            this.dgvResults.AllowUserToResizeColumns = false;
-            this.dgvResults.AllowUserToResizeRows = false;
-            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvResults.Location = new System.Drawing.Point(3, 3);
-            this.dgvResults.MultiSelect = false;
-            this.dgvResults.Name = "dgvResults";
-            this.dgvResults.ReadOnly = true;
-            this.dgvResults.RowHeadersVisible = false;
-            this.dgvResults.ShowCellErrors = false;
-            this.dgvResults.ShowCellToolTips = false;
-            this.dgvResults.ShowEditingIcon = false;
-            this.dgvResults.ShowRowErrors = false;
-            this.dgvResults.Size = new System.Drawing.Size(666, 281);
-            this.dgvResults.TabIndex = 0;
             // 
             // grpDestination
             // 
@@ -176,8 +157,8 @@
             // 
             this.tlpResults.ColumnCount = 1;
             this.tlpResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpResults.Controls.Add(this.dgvResults, 0, 0);
             this.tlpResults.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tlpResults.Controls.Add(this.tlpDataGrid, 0, 0);
             this.tlpResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpResults.Location = new System.Drawing.Point(3, 16);
             this.tlpResults.Name = "tlpResults";
@@ -225,6 +206,40 @@
             this.tlpMaster.Size = new System.Drawing.Size(684, 412);
             this.tlpMaster.TabIndex = 0;
             // 
+            // tlpDataGrid
+            // 
+            this.tlpDataGrid.ColumnCount = 1;
+            this.tlpDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDataGrid.Controls.Add(this.dgvResults, 0, 0);
+            this.tlpDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpDataGrid.Location = new System.Drawing.Point(3, 3);
+            this.tlpDataGrid.Name = "tlpDataGrid";
+            this.tlpDataGrid.RowCount = 1;
+            this.tlpDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDataGrid.Size = new System.Drawing.Size(666, 281);
+            this.tlpDataGrid.TabIndex = 0;
+            // 
+            // dgvResults
+            // 
+            this.dgvResults.AllowUserToAddRows = false;
+            this.dgvResults.AllowUserToDeleteRows = false;
+            this.dgvResults.AllowUserToResizeColumns = false;
+            this.dgvResults.AllowUserToResizeRows = false;
+            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResults.Location = new System.Drawing.Point(3, 3);
+            this.dgvResults.MultiSelect = false;
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersVisible = false;
+            this.dgvResults.ShowCellErrors = false;
+            this.dgvResults.ShowCellToolTips = false;
+            this.dgvResults.ShowEditingIcon = false;
+            this.dgvResults.ShowRowErrors = false;
+            this.dgvResults.Size = new System.Drawing.Size(660, 275);
+            this.dgvResults.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,7 +252,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pinger";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.grpDestination.ResumeLayout(false);
             this.tlpAllInputs.ResumeLayout(false);
             this.flpActionButtons.ResumeLayout(false);
@@ -247,6 +261,8 @@
             this.tlpResults.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpMaster.ResumeLayout(false);
+            this.tlpDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,7 +270,6 @@
         #endregion
         private System.Windows.Forms.GroupBox grpDestination;
         private System.Windows.Forms.GroupBox grpResults;
-        public System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.TableLayoutPanel tlpResults;
         private System.Windows.Forms.TableLayoutPanel tlpMaster;
         public System.Windows.Forms.Button btnStop;
@@ -265,6 +280,8 @@
         private System.Windows.Forms.TableLayoutPanel tlpDestinationIP;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.ProgressBar prbIsPinging;
+        private System.Windows.Forms.TableLayoutPanel tlpDataGrid;
+        public System.Windows.Forms.DataGridView dgvResults;
     }
 }
 
