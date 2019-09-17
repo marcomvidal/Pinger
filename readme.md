@@ -27,4 +27,4 @@ Todos os métodos de negócio tiveram seus testes automatizados para aumentar a 
 Testes de validação e auxiliares contêm testes unitários, enquanto que a transação de `Ping` possui testes de integração com cenários válidos e inválidos.
 
 ## Screenshots
-* [Tela principal](https://raw.githubusercontent.com/marcomvidal/StarVideo/master/screenshot_locacoes.png)
+![Principal](https://raw.githubusercontent.com/marcomvidal/Pinger/master/screenshot_geral.png)
