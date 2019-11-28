@@ -3,10 +3,9 @@
 Aplicação Windows Forms. Testa persistentemente a conectividade com a Internet e avisa com uma caixa de mensagem quando funciona. <br />
 
 ## Ferramentas utilizadas
-- C# 7.0
-- .NET Framework 4.7.2
-- MSTest v2 1.4.0
-- Moq 4.10.1
+- C# 8.0
+- .NET Framework 4.8
+- MSTest v2 1.3.2
 
 ## Componentes
 - `Models`: Domínio da aplicação e realização dos envios de dados;
@@ -25,6 +24,10 @@ O teste de conectividade pode ser feito com qualquer endereço IPv4 válido. Cas
 ## Testes
 Todos os métodos de negócio tiveram seus testes automatizados para aumentar a confiabilidade da aplicação. <br />
 Testes de validação e auxiliares contêm testes unitários, enquanto que a transação de `Ping` possui testes de integração com cenários válidos e inválidos.
+
+## Execução
+Execute o arquivo `/Pinger/publish/setup.exe` para instalá-lo. Concluído o processo, será possível executá-lo a partir do Menu Iniciar.<br>
+Este aplicativo depende do .NET Framework 4.8. Se não estiver instalado, o instalador o fará automaticamente mediante autorização do usuário.
 
 ## Screenshots
 ![Principal](https://raw.githubusercontent.com/marcomvidal/Pinger/master/screenshot_geral.png)
